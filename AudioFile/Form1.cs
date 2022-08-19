@@ -48,18 +48,16 @@ namespace AudioFile
             waveOut = new WaveOut();
             waveOut.DeviceNumber = comboBox2.SelectedIndex;
             waveOut.DesiredLatency = int.Parse(comboBox3.Text); //by default is 300 milliseconds
-
+            waveIn.WaveFormat = new WaveFormat(48000, 1);
             waveProvider = new BufferedWaveProvider(waveIn.WaveFormat);
 
-   
+            waveOut.Volume = volumeSlider1.Volume;
             waveOut.Init(waveProvider);
             waveOut.Play();
 
             //Handle data available at wavein instance
             waveIn.DataAvailable += WaveIn_DataAvailable;
-            waveIn.StartRecording();
-
-            
+            waveIn.StartRecording();    
         }
         private void WaveIn_DataAvailable(object sender, WaveInEventArgs e)
         {
@@ -110,7 +108,6 @@ namespace AudioFile
 
 
 
-
         //Below section is to convert audio from one format to another using NAudio.Lame package
         string inputWaveFile;
         string outputMp3File;
@@ -122,7 +119,6 @@ namespace AudioFile
 
 
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -131,7 +127,6 @@ namespace AudioFile
             outputMp3File = saveFileDialog.FileName;
 
         }
-
         private void button7_Click(object sender, EventArgs e)
         {
             //Benefit of using() expression is that any identifier/writer/variable etc declared inside would be 
@@ -139,6 +134,41 @@ namespace AudioFile
             using (AudioFileReader audioFileReader = new AudioFileReader(inputWaveFile))
             using (LameMP3FileWriter lameMP3FileWriter = new LameMP3FileWriter(outputMp3File, audioFileReader.WaveFormat, 128))
             audioFileReader.CopyTo(lameMP3FileWriter);
+        }
+
+
+
+
+
+        //Add desiredLatency (echo) and Play
+        private void button8_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "MP3 files|*.mp3";
+            openFileDialog.ShowDialog();
+            string file = openFileDialog.FileName;
+
+            waveOut = new WaveOut();
+            waveOut.DesiredLatency = int.Parse(comboBox3.Text);
+            waveProvider = new BufferedWaveProvider(new WaveFormat(44100,1));
+            waveOut.Volume = volumeSlider1.Volume;
+            waveOut.Init(waveProvider);
+            waveOut.Play();
+
+            using (AudioFileReader audioFileReader = new AudioFileReader(file))
+            {
+                while(audioFileReader.CanRead)
+                {
+                    byte[] buffer = new byte[1024];
+                    int rec = audioFileReader.Read(buffer, 0, buffer.Length);
+                    Array.Resize(ref buffer, rec);
+                    waveProvider.AddSamples(buffer,0, buffer.Length);
+                }
+            }
+            
+            
+            
+            
         }
     }
 }
