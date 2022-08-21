@@ -23,7 +23,8 @@ namespace AudioFile
             Samples.Enqueue(sample);
             float processedSample = sample + EchoFactor * Samples.Dequeue();
             //To keep sample between -1 and +1
-            return Math.Min(1,Math.Max(-1, processedSample));
+            float OneOrMinusOne = Math.Min(1,Math.Max(-1, processedSample));
+            return OneOrMinusOne;
         }
     }
 }

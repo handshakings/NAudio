@@ -43,6 +43,7 @@ namespace AudioFile
             int read = SourceStream.Read(buffer, offset, count);
             for (int i = 0; i < read / 4; i++)
             {
+                //Below line convert 4bytes=32bits into single floating point number
                 float sample = BitConverter.ToSingle(buffer, i * 4);
                 //sample = sample * 0.5F;
 
@@ -53,6 +54,7 @@ namespace AudioFile
                 }
 
                 //bytes.CopyTo(buffer,i*4);
+                //Below line convert back sample with effect into 4 bytes
                 byte[] bytes = BitConverter.GetBytes(sample);
                 buffer[i * 4 + 0] = bytes[0];
                 buffer[i * 4 + 1] = bytes[1];

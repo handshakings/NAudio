@@ -103,11 +103,14 @@ namespace AudioFile
             openFileDialog.ShowDialog();
             string wavFileName = openFileDialog.FileName;
 
-            WaveFileReader waveFileReader = new WaveFileReader(wavFileName);   
+            WaveFileReader waveFileReader = new WaveFileReader(wavFileName);  
+            //Below class convert stream sample bits to 32bits / sample
             WaveChannel32 waveChannel32 = new WaveChannel32(waveFileReader);
             EffectStream effectStream = new EffectStream(waveChannel32);
             stream = new BlockAlignReductionStream(effectStream);
-
+            //byte[] buffer = new byte[102400];
+            //int read = stream.Read(buffer, 0, buffer.Length);
+            //Array.Resize(ref buffer, read);
             for(int i = 0; i < waveChannel32.WaveFormat.Channels; i++)
             {
                 effectStream.Effects.Add(new Echo());
