@@ -83,7 +83,7 @@ namespace AudioFile
             string fileName = saveFileDialog.FileName;
 
             waveIn = new WaveIn();
-            waveIn.WaveFormat = new WaveFormat(44100, 1);
+            waveIn.WaveFormat = new WaveFormat(4800,16, 1);
             waveIn.DeviceNumber = comboBox1.SelectedIndex;
             waveIn.DataAvailable += WaveIn_DataAvailable1;
             waveIn.RecordingStopped += WaveIn_RecordingStopped;
@@ -148,27 +148,50 @@ namespace AudioFile
             openFileDialog.ShowDialog();
             string file = openFileDialog.FileName;
 
-            waveOut = new WaveOut();
-            waveOut.DesiredLatency = int.Parse(comboBox3.Text);
-            waveProvider = new BufferedWaveProvider(new WaveFormat(44100,1));
-            waveOut.Volume = volumeSlider1.Volume;
-            waveOut.Init(waveProvider);
-            waveOut.Play();
+            //WaveStream mainOutputStream = new Mp3FileReader(file);
+            //WaveChannel32 volumeStream = new WaveChannel32(mainOutputStream);
+            //WaveOutEvent player = new WaveOutEvent();
+            //player.DesiredLatency = int.Parse(comboBox3.Text);
+            //player.Volume = 1.0F;
+            //player.Init(volumeStream);
 
-            using (AudioFileReader audioFileReader = new AudioFileReader(file))
-            {
-                while(audioFileReader.CanRead)
-                {
-                    byte[] buffer = new byte[1024];
-                    int rec = audioFileReader.Read(buffer, 0, buffer.Length);
-                    Array.Resize(ref buffer, rec);
-                    waveProvider.AddSamples(buffer,0, buffer.Length);
-                }
-            }
+            //player.Play();
+
+
+            //using (var ms = File.OpenRead(file))
+            //using (var rdr = new Mp3FileReader(ms))
+            //using (var wavStream = WaveFormatConversionStream.CreatePcmStream(rdr))
+            //using (var baStream = new BlockAlignReductionStream(wavStream))
+            //using (var waveOut = new WaveOut(WaveCallbackInfo.FunctionCallback()))
+            //{
+            //    waveOut.Init(baStream);
+            //    waveOut.Play();
+
+            //}
+
+            //waveOut = new WaveOut();
+            //waveOut.DesiredLatency = int.Parse(comboBox3.Text);
+            //waveProvider = new BufferedWaveProvider(new WaveFormat(44100, 1));
+            //waveOut.Volume = volumeSlider1.Volume;
+            //waveOut.Init(waveProvider);
+            //waveOut.Play();
+
+            //using (AudioFileReader audioFileReader = new AudioFileReader(file))
+            //{
+            //    while (audioFileReader.CanRead)
+            //    {
+            //        byte[] buffer = new byte[102400];
+            //        int rec = audioFileReader.Read(buffer, 0, buffer.Length);
+            //        Array.Resize(ref buffer, rec);
+            //        waveProvider.AddSamples(buffer, 0, buffer.Length);
+            //    }
+            //}
+
+
+
             
-            
-            
-            
+
+
         }
     }
 }

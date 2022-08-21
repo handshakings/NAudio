@@ -28,3 +28,34 @@ E:\Scrp\AudioFile\AudioFile\bin\Debug\libmp3lame.32.dll
 E:\Scrp\AudioFile\AudioFile\bin\Debug\libmp3lame.64.dll
 E:\Scrp\AudioFile\AudioFile\bin\Debug\NAudio.Lame.dll
 E:\Scrp\AudioFile\AudioFile\bin\Debug\NAudio.Lame.pdb
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\libmp3lame.32.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\libmp3lame.64.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\AudioFile.exe.config
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\AudioFile.exe
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\AudioFile.pdb
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\Microsoft.Win32.Registry.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\NAudio.Asio.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\NAudio.Core.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\NAudio.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\NAudio.Lame.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\NAudio.Midi.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\NAudio.Wasapi.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\NAudio.WinForms.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\NAudio.WinMM.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\System.Security.AccessControl.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\System.Security.Principal.Windows.dll
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\Microsoft.Win32.Registry.xml
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\NAudio.xml
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\NAudio.Lame.pdb
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\System.Security.AccessControl.xml
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\bin\Debug\System.Security.Principal.Windows.xml
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\obj\Debug\AudioFile.csproj.AssemblyReference.cache
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\obj\Debug\AudioFile.csproj.SuggestedBindingRedirects.cache
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\obj\Debug\AudioFile.Form1.resources
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\obj\Debug\AudioFile.Properties.Resources.resources
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\obj\Debug\AudioFile.csproj.GenerateResource.cache
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\obj\Debug\AudioFile.csproj.CoreCompileInputs.cache
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\obj\Debug\AudioFile.csproj.CopyComplete
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\obj\Debug\AudioFile.exe
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\obj\Debug\AudioFile.pdb
+D:\Upwork Projects\Windows Apps\NAudio\AudioFile\obj\Debug\AudioFile.GiawaVideoPlaylist.resources
